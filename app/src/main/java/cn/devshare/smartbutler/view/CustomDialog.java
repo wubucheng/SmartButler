@@ -2,6 +2,11 @@ package cn.devshare.smartbutler.view;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.Gravity;
+import android.view.Window;
+import android.view.WindowManager;
+
+import cn.devshare.smartbutler.R;
 
 /**
  * ProjectName: SmartButler
@@ -11,15 +16,29 @@ import android.content.Context;
  * Create time: 2017/6/28 20:21
  */
 public class CustomDialog extends Dialog {
-    public CustomDialog(Context context) {
-        super(context);
+
+    //定义模板
+    public CustomDialog(Context context,int layout,int style) {
+        this(context,WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT,layout,style, Gravity.CENTER);
     }
 
-    public CustomDialog(Context context, int themeResId) {
-        super(context, themeResId);
+
+
+    //定义属性
+    public CustomDialog(Context context,int width,int height,int layout,int style,int gravity,int anim) {
+        super(context,style);
+        setContentView(layout);
+        Window window=getWindow();
+        WindowManager.LayoutParams layoutParams=window.getAttributes();
+        layoutParams.width=WindowManager.LayoutParams.MATCH_PARENT;
+        layoutParams.height=WindowManager.LayoutParams.WRAP_CONTENT;
+        layoutParams.gravity=gravity;
+        window.setAttributes(layoutParams);
+        window.setWindowAnimations(anim);
     }
 
-    protected CustomDialog(Context context, boolean cancelable, OnCancelListener cancelListener) {
-        super(context, cancelable, cancelListener);
+    //实例
+    public CustomDialog(Context context,int width,int height,int layout,int style,int gravity){
+        this(context,width,height,layout,style,gravity,R.style.pop_anim_style);
     }
 }

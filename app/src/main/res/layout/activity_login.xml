@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/head_iv"
         android:layout_width="96dp"
         android:layout_height="96dp"
@@ -16,12 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/account"
+        android:textSize="30sp"
         android:background="@drawable/edit_top_bg"/>
     <EditText
         android:id="@+id/passwrod_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
+        android:textSize="30sp"
         android:inputType="numberPassword"
         android:background="@drawable/edit_bottom_bg"/>
 

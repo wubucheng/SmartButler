@@ -18,6 +18,7 @@ import cn.devshare.smartbutler.MainActivity;
 import cn.devshare.smartbutler.R;
 import cn.devshare.smartbutler.entity.User;
 import cn.devshare.smartbutler.utils.SharePreUtil;
+import cn.devshare.smartbutler.view.CustomDialog;
 
 import static cn.devshare.smartbutler.R.id.login_bt;
 
@@ -35,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText passwordEt;
     private CheckBox remPass;
     private TextView forgetPass;
-
+    private CustomDialog dialog;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             passwordEt.setText(password);
         }
 
+        dialog=new CustomDialog(this,R.layout.dialog_loding,R.style.Theme_dialog);
+        dialog.setCancelable(false);
+
     }
 
     @Override
@@ -75,34 +79,40 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
                 break;
             case R.id.login_bt:
-                String username=usernameEt.getText().toString().trim();
-                String password=passwordEt.getText().toString().trim();
-                if(!TextUtils.isEmpty(username)&&!TextUtils.isEmpty(password)){
-                    User user=new User();
-                    user.setUsername(username);
-                    user.setPassword(password);
-                    user.login(new SaveListener<User>() {
-                        @Override
-                        public void done(User user, BmobException e) {
-                            if(e==null){
-                                //判断邮箱是否验证
-                                if(user.getEmailVerified()){
-                                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                    finish();
-                                }
-                            }else{
-                                Toast.makeText(LoginActivity.this, "登录失败"+e.toString(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }else {
-                    Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
-                }
+                login();
                 break;
             case R.id.forgetpass_tv:
                 startActivity(new Intent(LoginActivity.this,ForgetActivity.class));
                 break;
 
+        }
+    }
+
+    private void login(){
+        String username=usernameEt.getText().toString().trim();
+        String password=passwordEt.getText().toString().trim();
+        if(!TextUtils.isEmpty(username)&&!TextUtils.isEmpty(password)){
+            dialog.show();
+            User user=new User();
+            user.setUsername(username);
+            user.setPassword(password);
+            user.login(new SaveListener<User>() {
+                @Override
+                public void done(User user, BmobException e) {
+                    dialog.dismiss();
+                    if(e==null){
+                        //判断邮箱是否验证
+                        if(user.getEmailVerified()){
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        }
+                    }else{
+                        Toast.makeText(LoginActivity.this, "登录失败"+e.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }else {
+            Toast.makeText(this, "输入框不能为空", Toast.LENGTH_SHORT).show();
         }
     }
     @Override
