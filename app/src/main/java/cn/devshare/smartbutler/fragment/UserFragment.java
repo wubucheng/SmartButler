@@ -24,7 +24,9 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import cn.devshare.smartbutler.R;
 import cn.devshare.smartbutler.entity.User;
+import cn.devshare.smartbutler.ui.CourierActivity;
 import cn.devshare.smartbutler.ui.LoginActivity;
+import cn.devshare.smartbutler.ui.PhoneActivity;
 import cn.devshare.smartbutler.utils.ToastUtil;
 import cn.devshare.smartbutler.utils.UtilTools;
 import cn.devshare.smartbutler.view.CustomDialog;
@@ -147,8 +149,10 @@ public class UserFragment extends Fragment implements View.OnClickListener{
                 dialog.dismiss();
                 break;
             case R.id.courier_tv:
+                startActivity(new Intent(getActivity(), CourierActivity.class));
                 break;
             case R.id.phone_tv:
+                startActivity(new Intent(getActivity(), PhoneActivity.class));
                 break;
         }
     }

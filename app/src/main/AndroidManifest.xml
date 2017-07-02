@@ -36,6 +36,8 @@
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.GuideActivity"/>
         <activity android:name=".ui.ForgetActivity" />
+        <activity android:name=".ui.CourierActivity" />
+        <activity android:name=".ui.PhoneActivity" />
     </application>
 
 </manifest>
