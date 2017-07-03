@@ -33,4 +33,6 @@
     <string name="courier_number">快递单号</string>
     <string name="input_phone">电话号码</string>
     <string name="query">查询</string>
+    <string name="send">发送</string>
+    <string name="input">输入</string>
 </resources>

@@ -127,7 +127,7 @@ public class PhoneActivity extends BaseActivity implements View.OnClickListener 
         }
 
     private void getPhone(String str) {
-        String url="http://apicloud.mob.com/v1/mobile/address/query?key="+ StaticClass.MOB_PHONE_KEY+"&phone="+str;
+        String url=StaticClass.API.MOB_PHONE_API+"&phone="+str;
         RxVolley.get(url, new HttpCallback() {
             @Override
             public void onSuccess(String t) {
