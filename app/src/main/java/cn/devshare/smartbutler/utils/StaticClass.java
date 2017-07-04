@@ -14,6 +14,7 @@ public class StaticClass {
     public static final String SHARE_IS_FIRST = "isFirst";
     public static final String COURIER_KEY="677c7f3bd198b6912070a6dbab9d87df";
     public static final String MOB_PHONE_KEY="1f1aaddfcc9c0";
+    public static final String TIANXING_WECHAT_KEY="cc8c7d619f5cd22145eaa9be0e6ffa98";
 
     public static class API{
         //快递查询接口
@@ -22,5 +23,6 @@ public class StaticClass {
         public static final String MOB_PHONE_API="http://apicloud.mob.com/v1/mobile/address/query?key"+ StaticClass.MOB_PHONE_KEY+"&phone=";
         //聊天机器人接口
         public static final String QIINGYUNKE_CHAT_API="http://api.qingyunke.com/api.php?key=free&appid=0&msg=";
+        public static final String TIANXING_WECHAT_API="http://api.tianapi.com/wxnew/?key="+StaticClass.TIANXING_WECHAT_KEY+"&num=10";
     }
 }

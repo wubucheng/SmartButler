@@ -103,7 +103,7 @@ public class ChatListAdapter extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        return chatDatas.size()+1;
+        return 3;
     }
 
     class ViewHolderLeft {

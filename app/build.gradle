@@ -50,4 +50,5 @@ dependencies {
         exclude group: 'com.squareup.okhttp3'
         exclude group: 'com.squareup.okio'
     }
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
