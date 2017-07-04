@@ -24,5 +24,6 @@ public class StaticClass {
         //聊天机器人接口
         public static final String QIINGYUNKE_CHAT_API="http://api.qingyunke.com/api.php?key=free&appid=0&msg=";
         public static final String TIANXING_WECHAT_API="http://api.tianapi.com/wxnew/?key="+StaticClass.TIANXING_WECHAT_KEY+"&num=10";
+        public static final String GANGK_GIRL_API="http://gank.io/api/search/query/listview/category/%e7%a6%8f%e5%88%a9/count/50/page/1";
     }
 }

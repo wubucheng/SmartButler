@@ -51,4 +51,5 @@ dependencies {
         exclude group: 'com.squareup.okio'
     }
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.chrisbanes:PhotoView:1.3.0'
 }
