@@ -34,7 +34,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.fragment
- * Class describe:
+ * Class describe: 美女板块
  * Author: cheng
  * Create time: 2017/6/26 19:46
  */

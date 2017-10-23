@@ -23,7 +23,13 @@ public class StaticClass {
         public static final String MOB_PHONE_API="http://apicloud.mob.com/v1/mobile/address/query?key"+ StaticClass.MOB_PHONE_KEY+"&phone=";
         //聊天机器人接口
         public static final String QIINGYUNKE_CHAT_API="http://api.qingyunke.com/api.php?key=free&appid=0&msg=";
+        //微信精选接口
         public static final String TIANXING_WECHAT_API="http://api.tianapi.com/wxnew/?key="+StaticClass.TIANXING_WECHAT_KEY+"&num=10";
-        public static final String GANGK_GIRL_API="http://gank.io/api/search/query/listview/category/%e7%a6%8f%e5%88%a9/count/50/page/1";
+        //gank接口
+        public static final String GANGK_GIRL_API="http://gank.io/api/data/%E7%A6%8F%E5%88%A9/10/1 ";
+        //语音Key
+        public static final String VOICE_KEY = "583081c6";
+        //更新接口
+        public static final String UPDATE_APK_API="192.168.31.90:8080/smartbuttler/config.json";
     }
 }

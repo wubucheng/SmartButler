@@ -25,7 +25,7 @@ import static cn.devshare.smartbutler.R.id.login_bt;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe:登录
  * Author: cheng
  * Create time: 2017/6/27 11:09
  */

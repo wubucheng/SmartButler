@@ -24,7 +24,7 @@ import cn.devshare.smartbutler.utils.StaticClass;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe:归属地查询
  * Author: cheng
  * Create time: 2017/7/2 14:59
  */

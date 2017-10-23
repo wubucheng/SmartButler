@@ -18,7 +18,7 @@ import cn.devshare.smartbutler.entity.User;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe:忘记密码
  * Author: cheng
  * Create time: 2017/6/28 16:38
  */

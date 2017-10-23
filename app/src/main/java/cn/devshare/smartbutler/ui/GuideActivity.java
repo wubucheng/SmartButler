@@ -22,7 +22,7 @@ import cn.devshare.smartbutler.R;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe:引导页
  * Author: cheng
  * Create time: 2017/6/27 11:09
  */

@@ -32,7 +32,7 @@ import cn.devshare.smartbutler.utils.ToastUtil;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe: 快递查询
  * Author: cheng
  * Create time: 2017/7/1 15:21
  */
@@ -81,7 +81,7 @@ public class CourierActivity extends BaseActivity implements View.OnClickListene
               @Override
                 public void onFailure(int errorNo, String strMsg) {
                     super.onFailure(errorNo, strMsg);
-                  L.i("error: "+errorNo);
+                    L.i("error: "+errorNo);
                     L.i("error: "+strMsg);
                 }
 

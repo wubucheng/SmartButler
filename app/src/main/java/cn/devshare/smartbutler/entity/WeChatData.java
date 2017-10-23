@@ -3,7 +3,7 @@ package cn.devshare.smartbutler.entity;
 
 import java.io.Serializable;
 
-public class WeChatData implements Serializable{
+public class WeChatData implements Serializable {
 
     public String getCtime() {
         return ctime;

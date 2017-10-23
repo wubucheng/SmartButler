@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechSynthesizer;
+import com.iflytek.cloud.SynthesizerListener;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
 
@@ -25,6 +29,7 @@ import cn.devshare.smartbutler.R;
 import cn.devshare.smartbutler.adapter.ChatListAdapter;
 import cn.devshare.smartbutler.entity.ChatData;
 import cn.devshare.smartbutler.utils.L;
+import cn.devshare.smartbutler.utils.SharePreUtil;
 
 /**
  * ProjectName: SmartButler
@@ -40,6 +45,8 @@ public class ButlerFragment extends Fragment implements View.OnClickListener{
     private EditText textTv;
     private Button sendBt;
     ChatListAdapter chatListAdapter;
+    //TTS
+    private SpeechSynthesizer mTts;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_butler, container, false);
@@ -48,6 +55,12 @@ public class ButlerFragment extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view) {
+        mTts=SpeechSynthesizer.createSynthesizer(getContext(),null);
+        mTts.setParameter(SpeechConstant.VOICE_NAME,"xiaoyan");
+        mTts.setParameter(SpeechConstant.SPEED,"50");
+        mTts.setParameter(SpeechConstant.VOLUME,"80");
+        mTts.setParameter(SpeechConstant.ENGINE_TYPE,SpeechConstant.TYPE_CLOUD);
+
         mChatListView = (ListView) view.findViewById(R.id.mChatListView);
         mChatListView.setDivider(null);
         textTv = (EditText) view.findViewById(R.id.et_text);
@@ -97,6 +110,12 @@ public class ButlerFragment extends Fragment implements View.OnClickListener{
     }
 
     private void addLeftItem(String text) {
+        startSpeak(text);
+/*        boolean isSpeak = SharePreUtil.getBoolean(getActivity(), "isSpeak", false);
+        if (isSpeak) {
+            startSpeak(text);
+        }*/
+
         ChatData chatData=new ChatData();
         chatData.setType(ChatListAdapter.VALUE_LEFT_TEXT);
         chatData.setText(text);
@@ -104,4 +123,44 @@ public class ButlerFragment extends Fragment implements View.OnClickListener{
         chatListAdapter.notifyDataSetChanged();
         mChatListView.setSelection(mChatListView.getBottom());
     }
+
+    private void startSpeak(String text){
+        mTts.startSpeaking(text,mSynthesizerListener);
+    }
+    private SynthesizerListener mSynthesizerListener =new SynthesizerListener() {
+        @Override
+        public void onSpeakBegin() {
+
+        }
+
+        @Override
+        public void onBufferProgress(int i, int i1, int i2, String s) {
+
+        }
+
+        @Override
+        public void onSpeakPaused() {
+
+        }
+
+        @Override
+        public void onSpeakResumed() {
+
+        }
+
+        @Override
+        public void onSpeakProgress(int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onCompleted(SpeechError speechError) {
+
+        }
+
+        @Override
+        public void onEvent(int i, int i1, int i2, Bundle bundle) {
+
+        }
+    };
 }

@@ -18,7 +18,7 @@ import cn.devshare.smartbutler.utils.UtilTools;
 /**
  * ProjectName: SmartButler
  * PackName：cn.devshare.smartbutler.ui
- * Class describe:
+ * Class describe:启动页
  * Author: cheng
  * Create time: 2017/6/27 10:50
  */
